@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #000;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.navbar {
+  display: flex;
+  flex-direction: row;
+  gap: 350px;
+  padding: 20px;
+  height: 100px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.link-container {
+  display: flex;
+  flex-direction: row;
+  gap: 150px;
+  align-items: center;
+}
+
+.nav-link:hover {
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.nav-link {
+  padding: 15px 10px;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 400px;
+  width: 100%;
+  padding: 30px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(6, 150px);
+}
+
+.card {
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #f5f5f5;
+}
+
+.card:hover {
+  background-color: #dfdede;
+  cursor: pointer;
+}
+
+.food-type {
+  padding: 1px;
+  transition-timing-function: ease-in-out;
+  transition: padding 1s;
+  cursor: pointer;
+}
+
+.food-type:hover {
+  padding: 10px;
+}
+
+.content-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.big-card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 50px;
+}
+
+.card-heading {
+  font-size: 30px;
+  align-self: center;
+}
+
+.card-ingredients {
+  border: black 1px dotted;
+  background: rgba(255, 204, 0, .4);
+  border-radius: 16px;
+  width: fit-content;
+  align-self: center;
+  padding: 20px 30px;
+}
+
+.ingredient {
+  color: #02542d;
+  background-color: #cff7d3;
+  border-radius: 30px;
+  padding: 10px;
+  text-align: center;
+}
+
+.card-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+
+}
+
+.fridge {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 100px;
+}

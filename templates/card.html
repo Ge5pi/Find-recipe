@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <nav class="navbar">
+            <img src="static/imgs/logo.png" alt="Logo" class="logo" height="60" width="60">
+            <div class="link-container">
+                <a href="fridge.html" class="nav-link">Fridge</a>
+                <a href="index.html" class="nav-link">Book</a>
+                <a href="#" class="nav-link">Generation</a>
+                <a href="#" class="nav-link">Smth</a>
+            </div>
+        </nav>
+        <main class="main-content">
+            <div class="content-card">
+                <div class="big-card">
+                    <h2 class="card-heading">{{header}}</h2>
+                    <div class="card-detail">
+                        <div class="card-ingredients content">
+                            {%for el in ingredients%}
+                            <div class="ingredient">{{el.name}}: {{el.quantity}}</div>
+                            {%endfor%}
+                        </div>
+                        {%for i in insts%}
+                        <div class="card-description">{{i}}</div>
+                        {%endfor%}
+                        <div>Cost: ...</div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+        <footer class="footer"></footer>
+    </div>
+    <script src="main/index.js"></script>
+
+</body>
+
+</html>
