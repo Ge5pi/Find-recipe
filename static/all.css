@@ -134,7 +134,7 @@ footer {
 */
 
 .card:hover {
-  background-color: #dfdede;
+
   cursor: pointer;
 }
 
@@ -154,20 +154,36 @@ footer {
 }
 
 .content {
-    flex-grow: 1;
-    padding-left: 20px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 70px;
+
 }
 
 .card{
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.card h3{
+
     border-radius: 10px;
     text-align: center;
-    background-color: #E1E1E1;
+    background-color: #FFA500;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#cookieContent{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-self: center;
+
+    margin-left: 5%;
+}
+
+.content{
+    width: 100%;
+    display: flex;
 }
 
 .card h3{

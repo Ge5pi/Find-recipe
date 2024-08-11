@@ -149,7 +149,7 @@
 
 .fridge li{
     width: fit-content;
-    text-align: center;
+    text-align:  center;
     padding: 20px;
     background: rgba(255, 201, 91, .5);
     border-radius: 24px;

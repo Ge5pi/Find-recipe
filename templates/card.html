@@ -4,45 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe page</title>
+    <title>Рецепт</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+          rel="stylesheet">
 </head>
 
 <body>
 
-    <div class="wrapper">
-        <nav class="navbar">
-            <img src="static/imgs/logo.png" alt="Logo" class="logo" height="60" width="60">
-            <div class="link-container">
-                <a href="fridge.html" class="nav-link">Fridge</a>
-                <a href="index.html" class="nav-link">Book</a>
-                <a href="#" class="nav-link">Generation</a>
-                <a href="#" class="nav-link">Smth</a>
-            </div>
-        </nav>
-        <main class="main-content">
-            <div class="content-card">
-                <div class="big-card">
-                    <h2 class="card-heading">{{header}}</h2>
-                    <div class="card-detail">
-                        <div class="card-ingredients content">
-                            {%for el in ingredients%}
-                            <div class="ingredient">{{el.name}}: {{el.quantity}}</div>
-                            {%endfor%}
-                        </div>
-                        {%for i in insts%}
-                        <div class="card-description">{{i}}</div>
+<div class="wrapper">
+    <nav class="navbar">
+        <a href="../generate">
+            <img src="/static/logo.png" height="60px" width="60px"></a>
+        <div class="link-container">
+            <a href="../generate" class="nav-link">Генерация</a>
+            <a href="../test" class="nav-link">Холодильник</a>
+        </div>
+    </nav>
+    <main class="main-content">
+        <div class="content-card">
+            <div class="big-card">
+                <h2 class="card-heading">{{header}}</h2>
+                <div class="card-detail">
+                    <div class="card-ingredients content">
+                        {%for el in ingredients%}
+                        <div class="ingredient">{{el.name}}: {{el.quantity}}</div>
                         {%endfor%}
-                        <div>Cost: ...</div>
                     </div>
-
+                    {%for i in insts%}
+                    <div class="card-description">{{i}}</div>
+                    {%endfor%}
                 </div>
             </div>
-        </main>
-        <footer class="footer"></footer>
-    </div>
-    <script src="main/index.js"></script>
+        </div>
+    </main>
+</div>
+<footer>
+    &copy; 2024 Все права защищены | Ваш сайт с рецептами
+</footer>
+
+<script src="main/index.js"></script>
 
 </body>
 

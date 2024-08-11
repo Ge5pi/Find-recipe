@@ -17,8 +17,7 @@ class Product:
         self.main_name = main_name
 
 
-
-rand = "Pepperoni"
+"""rand = "Pepperoni"
 
 completion = client.chat.completions.create(
     model='gpt-4o-mini',
@@ -55,11 +54,11 @@ for el in ing_class_list:
 
 insts = response[ins_index::].split(".")
 
+"""
+
 
 @app.route("/recipe/<dish_name>")
 def index(dish_name):
-
-
     rand = dish_name
 
     completion = client.chat.completions.create(
@@ -68,16 +67,16 @@ def index(dish_name):
             {"role": "system", "content": "you are a chef. Your main task is to provide recipes for your clients with "
                                           "given name of the dish. Produce only a list of products, divided by a comma. "
                                           "and after the keyword 'instructions: ' generate the whole instructions."
-                                          "Specify the quantity for each product, using colon. Do not say the word Products at all"},
+                                          "Specify the quantity for each product, using colon. Do not say the word Products at all. Use the orderedlist to numerate the instructions. To divide the nuber andthe step use the paranthesis"},
             {"role": "user", "content": rand}
         ]
     )
 
     response = completion.choices[0].message.content
 
-    ins_index = response.find("instructions")+14
+    ins_index = response.find("instructions") + 14
 
-    ing_index = response[:ins_index]
+    ing_index = response[:ins_index].replace("instructions", "")
     ing_list = ing_index.split(', ')
 
     print("instructions: ", response[ins_index::])
@@ -97,12 +96,7 @@ def index(dish_name):
 
     insts = response[ins_index::].split(".")
 
-
-
     return render_template('card.html', ingredients=ing_class_list, insts=insts, header=rand)
-
-
-
 
 
 '''completion_type = client.chat.completions.create(
@@ -129,9 +123,9 @@ def get_price(product_type):
 get_price(completion_type.choices[0].message.content)'''
 
 
+@app.route("/", methods=['POST', 'GET'])
 @app.route("/generate", methods=['POST', 'GET'])
 def generate():
-
     if request.method == 'POST':
         data = request.get_json()
         if not data or 'value' not in data:
@@ -153,9 +147,11 @@ def generate():
     else:
         return render_template("generate.html")
 
-@app.route("/main")
+
+@app.route("/test")
 def main():
     return render_template("all_recipes.html")
+
 
 if __name__ == '__main__':
     app.run(debug=True)
